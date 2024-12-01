@@ -1,9 +1,26 @@
 <template>
-  <h1>Home</h1>
+  <div class="home">
+    <h2>All Destination</h2>
+    <div class="destinations">
+      <RouterLink
+        v-for="destination of destinations"
+        :key="destination.id"
+        :to="destination.slug"
+        ><h2>{{ destination.name }}</h2>
+        <img :src="`/images/${destination.image}`" :alt="destination.name"
+      /></RouterLink>
+    </div>
+  </div>
 </template>
 
 <script>
-export default {};
+import sourceData from "@/assets/data.json";
+export default {
+  data() {
+    return {
+      destinations: sourceData.destinations,
+    };
+  },
+};
 </script>
-
-<style></style>
+``
