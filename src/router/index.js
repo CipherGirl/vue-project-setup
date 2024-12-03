@@ -4,27 +4,7 @@ import { createRouter, createWebHistory } from "vue-router";
 const routes = [
   { path: "/", name: "Home", component: Home },
   {
-    path: "/brazil",
-    name: "Brazil",
-    component: () => import("@/pages/Brazil.vue"),
-  },
-  {
-    path: "/panama",
-    name: "Panama",
-    component: () => import("@/pages/Panama.vue"),
-  },
-  {
-    path: "/jamaica",
-    name: "Jamaica",
-    component: () => import("@/pages/Jamaica.vue"),
-  },
-  {
-    path: "/hawaii",
-    name: "Hawaii",
-    component: () => import("@/pages/Hawaii.vue"),
-  },
-  {
-    path: "/destination/:id",
+    path: "/destination/:id/:slug",
     name: "destination",
     component: () => import("@/pages/Destination.vue"),
   },
