@@ -5,8 +5,9 @@
       <RouterLink
         v-for="destination of destinations"
         :key="destination.id"
-        :to="destination.slug"
-        ><h2>{{ destination.name }}</h2>
+        :to="{ name: 'destination', params: { id: destination.id } }"
+      >
+        <h2>{{ destination.name }}</h2>
         <img :src="`/images/${destination.image}`" :alt="destination.name"
       /></RouterLink>
     </div>
@@ -23,4 +24,3 @@ export default {
   },
 };
 </script>
-``
