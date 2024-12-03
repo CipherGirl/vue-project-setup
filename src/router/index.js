@@ -23,6 +23,11 @@ const routes = [
     name: "Hawaii",
     component: () => import("@/pages/Hawaii.vue"),
   },
+  {
+    path: "/destination/:id",
+    name: "destination",
+    component: () => import("@/pages/Destination.vue"),
+  },
 ];
 
 const router = createRouter({
