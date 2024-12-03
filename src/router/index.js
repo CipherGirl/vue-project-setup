@@ -1,21 +1,34 @@
-import About from "@/pages/About.vue";
-import Brazil from "@/pages/Brazil.vue";
-import Hawaii from "@/pages/Hawaii.vue";
 import Home from "@/pages/Home.vue";
-import Jamaica from "@/pages/Jamaica.vue";
-import Panama from "@/pages/Panama.vue";
-
 import { createRouter, createWebHistory } from "vue-router";
+
+const routes = [
+  { path: "/", name: "Home", component: Home },
+  {
+    path: "/brazil",
+    name: "Brazil",
+    component: () => import("@/pages/Brazil.vue"),
+  },
+  {
+    path: "/panama",
+    name: "Panama",
+    component: () => import("@/pages/Panama.vue"),
+  },
+  {
+    path: "/jamaica",
+    name: "Jamaica",
+    component: () => import("@/pages/Jamaica.vue"),
+  },
+  {
+    path: "/hawaii",
+    name: "Hawaii",
+    component: () => import("@/pages/Hawaii.vue"),
+  },
+];
+
 const router = createRouter({
   history: createWebHistory(),
-  routes: [
-    { path: "/", name: "Home", component: Home },
-    { path: "/about", name: "about", component: About },
-    { path: "/brazil", name: "Brazil", component: Brazil },
-    { path: "/panama", name: "Panama", component: Panama },
-    { path: "/jamaica", name: "Jamaica", component: Jamaica },
-    { path: "/hawaii", name: "Hawaii", component: Hawaii },
-  ],
+  routes,
+  linkActiveClass: "link-active-class",
 });
 
 export default router;
