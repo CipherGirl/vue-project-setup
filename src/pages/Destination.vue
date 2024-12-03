@@ -10,9 +10,12 @@
 <script>
 import sourceData from "@/assets/data.json";
 export default {
+  props: {
+    id: { type: String, required: true },
+  },
   computed: {
     destinationId() {
-      return parseInt(this.$route.params.id);
+      return parseInt(this.$props.id);
     },
 
     destination() {
